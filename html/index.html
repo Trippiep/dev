@@ -1,21 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   <h1> Date ---- Topic dlll</h1>
-   <!--  -->
-<!--  -->
+LAMP :linux  apache  mysql php
+mern: mongodb expressjs react nodejs
+mean : mongodb expressjs angular nodejs
+Json :  Javascript Object notation
 
+Working of internet: 
+1969 : creation of internet at ARPA called as ARPANET
+2 components: Packets and Protocols
+Packet Switching : Pushing data in small chunks/bits 
+Ethernet: if sender and receiver are connected to same network
+IP(Internet Protocol) : sending packets from network to network
+TCP(Transmission control protocol):to ensure packets are arriving successfully in same order
+HTTP: for formatting data over websites and apps
+UDP(user datagram protocol)
+Data flow:
+Internet(switches/Router)--protocol(http request)---ISP---Mode of connection----system(receiver)
+Modes of connecting through Internet:
+DSL(Digital Subscriber Line) , Dialup, Cabletv,Satellite, 2,3,4,5G 
+Internet Connection Protocoles:TCP/IP, HTTP, FTP
 
+HTTP/HTTPS: HTTP is the TCP/IP based application layer communication protocol
+DNS: Domain Name System  for easy to access and rember IPs
+Hosting: online service that allows us to publish our websites files on the internet
 
+structure of Web Application:
+Client side(Frontend) : HTML/css/bootstrap/js/react/angular....
+Server Side(backend)  :express.js/node/js(languages)
+Database : MongoDB/ MYsql/ Postgresql
+URL: https://www/google.com/something
+     protocol---host:port---path
+standard port : 80 
+HTTP: Web server----(http) ------web browser
+web browser and web server communicates with each other using an application level protocol
+Http: request response cycle is based on stateless and connectionless protocol
+http is called connectionless/stateless because a new connection is established on every request
+continuos open connection leads to Denial of SErvice
+Https: Http  over secure socket layer : communication between browser and server are encrypted
+Http Request Type: Get / Post
+To inform the browser regarding the status of the request made to the server, the HTTP response contains a field called status code, that is issued by a server ie:
+Status Code      Information
+1XX  :Informational Response(request Received)
+2XX  :Success
+3xx  :Redirection
+4XX  :Client Error
+5Xx  :Server Error
+eg: 200 OK, 403 Forbidden, 404 Not found, 500 Internal server error
+Http Response Contains  a Content Type Field the value of these field will be from the MIME(Multipurpose Internet Mail Extension)
 
+MIME: 
+indicate the nature and format of the response
+eg of  mime encode
+text  : represents any document that contains text
+text/plain
+text/html
+text/css
+text/javascript
+application : represents the binary data etc
+application/json
+application/sql
+application/javascript
+application/pdf
+Web applications can use MIME types to determine a file or resource's format before it is transmitted over the internet. When a file is requested, the MIME type is included in the HTTP headers, which aids the browser or application in comprehending how to handle the file.
+Developer stack:
+Coding(vscode,eclipse...)
+Unit Testing(Jasmine,Karma,Jest,Enzyme..)
+Integration Testing(Protractor): frontend testing tool
+Version Control(Git)
+Building and Automation(Sonarqube,Gulp, npm ,webpack)
+Jenkins : Continous Integeration
 
+HTML
+Title :located on the browser Toolbar . Keyword should be used in the Title bar 
+metadata: specify additional important information about the document, not visible to user
+eg: meta name, http-equiv, content, charset
+<meta name="keywords" content="tutorial,HTML">
+<meta http-equiv="refresh" content="30">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+IP address: 127.0.0.1 , Domain name : localhost
+Live server uses the port 5500 
 
+Forms:-------------------------------------------------------------------------------------
+<form name="Name of the form" action="Link to server-side program" method="HTTP Request method" target="Where to display the response">
+    <!-- All the form elements will come here-->
+</form>
+name:name attribute is used for accessing  the form data by the scripting language
+action: attribute is used to specify the server side program that will be executed when form is submitted
+method: used to specify the http request method that will be used to submit the form data to the server side program
+target: used to specify where to display the response once the form is submitted
+novalidate:skip validations upon submission
+other HTTP methods: PUT, DELETE,TRACE,HEAD, OPTIONS, CONNECT
+
+<input type="input-type" value="element-value"/>
+Input element in form : text,password,radio,checkbox,button,submit,reset
+HTML5 input types:
+above +     date,email,number,url,file,color,range
+label for the name in input type
+Input element attributes:
+required, value, type, name, size, autofocus, maxlength, minlength, pattern, placeholder, steps, formvvalidate, readonly, disabled, multiple
+Label : defines the label  for an input element, also called as UI(user interface) components
+Other form elements:
+Select: means dropdown values  
+<label for="dropdown_list">Dropdown</label>
+<select id="dropdown_list">
+   <option>option 1</option>
+   <option>option 2</option>
+</select>
+select element attriutes: autofocus,name,disabled,multiple(select multipleoptions from dropdown),size
+
+DataList: provide predefined values to the  input field
+<label for="stream">Choose your stream</label>
+<input list="streams" name="stream" id="stream" />
+<datalist id="streams">
+    <option value="Java">
+    <option value="UI">
+    <option value="BigData">
+    <option value="IMS">
+    <option value="AI">
+</datalist>
+TextArea : provides multiple lines of input
+Texarea element attributes: autofocus,cols,rows,name,disabled,placeholder,maxlength
+Button element:
+<button type="submit">Submit
+</button>
+button element attribute: autofocus, name, disabled, type,value
+Div tag  element : <div></div> : for grouping the field names, block level
+span tag element : inline element 
+Submission of the form is done using the action attribute
+<form name="travelForm" action="success.html" method="post">
+    ...
+   <button type="submit"> submit </button>
+</form>
+
+Tables:----------------------------------------------------------------------------------
+represting the data in the form of a table ;
+<table>
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
     
-    
-</body>
-</html>
+    <tbody>
+        <tr>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+border =1,2,3,4,4.... 
+Attribute of th and td:
+colspan : spread the element to the number of columns
+rowspan: spread the element to the number of rows
+
+Anchor----------------------------------------------------------------------------
+any text element or image provides a link to another webpage is called hyperlink
+To  link webpages inside website anchor element is used
+<a href="url" target="value">Text</a>
+href : attribute is used to specify the URL of the webpage
+target: specify  where to open the linked webpage
+An unvisited link is underlined and blue
+A visited link is underlined and purple
+An active link is underlined and red
+Values of the target: _blank, _self, _parent, _top
+
+Multimedia---------------------------------------------------------------
+image attributes: src, border, height, width, alt
+<img src="link of the image" alt="Alternate Text"/>
+audio attribute: src,loop, controls, autoplay, muted
+<audio src="link of the audio file" controls="controls">Your browser does not support the audio tag</audio>
+video attribute: src,controls,loop,autoplay,muted,width,height,poster
+<video src="link of the video file" controls="controls">Your browser does not support the video tag</video>
+multiple media resources can be added to html using <source>
+eg: 
+<audio>
+<source src="first.mp3" type="audio/mp3">
+<source src="second.mp3" type="audio/mp3">
+</audio>
+codec attribute: used to specify the version of the codecs needed to play the audio or video file
+
+Text Formatting------------------------------------------------
+Heading : h1,h2,h3,h4..
+Attributes -	Description
+<b>	    Describes bold text
+<del>	Describes deleted text
+<em>	Describes emphasized text
+<i>	    Describes italicized text
+<ins>	Describes inserted text
+<mark>	Describes highlighted text
+<small>	Describes small text
+<strong>	Describes strong text
+<sub>	Describes subscripted text
+<sup>	Describes superscripted text
+
+List Elements: ordered, unordered, description list
+unordered:
+<ul type="disc">  type can be : disc, square, circle
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+</ul>
+ordered:
+<ol type="1"> type can  be: 1, A ,a roman( I i)
+    <li>List Item 1</li>
+    <li>List Item 2</li>
+    <li>List Item 3</li>
+</ol>
+Descriptive:
+<dl>
+  <dt>Description term 1</dt>
+  <dd>Description detail 1</dd>
+  <dt>Description term 2</dt>
+  <dd>Description detail 2</dd>
+</dl>
+
+Character Entities: whenever we want to use some character which is not on the keyboard then we use character entities
+eg: &nbsp; is for  space like so are the following
+Character	Description	EntityName	Entity Number
+<space>	Non-breaking space	&nbsp;	&#160;
+<	Less than	&It;	&#60;
+>	Greater than	&gt;	&#62;
+&	Ampersand	&amp;	&#38;
+©	Copyright	&copy;	&#169;
+TM	Trademark	&trade;	&#153;
+®	Registered Trademark	&reg;	&#174;
+
+
+Semantic elements : ------------------very important to properly manage the elements in the html page-----------------------
+Sectioning element	        Description
+main	                Defines the main content of a document.
+section	                Represents a group of related content.
+article	                Defines an individual self-contained content.
+header	                Defines a header for the document or a section.
+footer	                Defines a footer for the document or a section.
+nav	                    Defines navigation links
+aside	                Defines content apart from the page content.
+address	                Defines contact information for an article or web page.
+h1,h2,h3,h4,h5,h6	    Defines heading
+
+Testing html5 website : html5test.com
+caniuse: Identify capabilities of your browser by referring to this caniuse website.
+<!Doctype html> tells the browser that it is an html5  document, this also ensures that the browser renders the page  according to the html 5 standards
+Using of Best practices while writing the code is important
+
+

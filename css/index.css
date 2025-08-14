@@ -1,0 +1,1619 @@
+
+Raw Css  won't be used as such in place of that we have :
+Better To Learn Libraries of CSS  instead of Raw Css
+Tailwind
+Material UI
+Bootstrap
+Radix
+Jakra UI
+Shad CN.....
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+                                              
+                                              
+                                              
+                                              CSS:CASCADING STYLE SHEET 
+
+
+
+
+
+Css is the declarative programming language.
+Describes the rule on how the html element should be rendered on the webpage
+syntax: 
+selectors { 
+    css-property: value; 
+  } 
+
+
+Selectors in CSS:
+1. Type Selector eg:
+p{color:green}
+2. ID Selector eg:
+<p id ="someid">someid</p>
+#someid{color:"green"}
+# tag: indicates the ID  Selector : we use id selector to style only a specific element
+3. Class Selector eg: 
+<p class="someclass">Santosh</p>
+.someclass{color:"green"}
+4. Universal Selector : selects all the html element on  the page
+*{property: value}
+eg: *{background:"green"}
+
+5. Attribute Selector eg:
+types of attribute selector:=====================================
+
+[attribute] : Selects all the HTML elements which have the attribute. 
+eg:
+<p id = "someid">Santosh</p>
+style: p[id]{color:"green"}
+
+[attribute=keyword] : Selects all the HTML elements which have the attribute and its value should match the keyword.
+eg:
+<p id = "someid">Santosh</p>
+<p id = "anotherid">Santosh</p>
+style : p[id="someid"]{color:"green"}
+
+
+[attribute*=keyword]: Selects all the HTML elements which has the attribute and its value containing the keyword.
+eg: 
+[ href*="sparsh"] {/*Styling properties*/} selects <a href="https://sparsh.com">Sparsh</a> 
+
+[attribute^=keyword]:Selects all the HTML elements which has the attribute and the keyword is at the beginning of the value
+eg: 
+[ name^= "happy"] {/*Styling properties*/} selects <div name="happyFace">Hello World</div>
+
+[attribute $=keyword] :Selects all the HTML elements which has the attribute and the keyword is at the end of the value
+eg:
+[ href$="com"] {/*Styling properties*/} selects <a href="https://icompass.com">Compass</a>
+
+=================================================================
+
+Combinators in CSS:
+eg:  Selector1 (>, +, ~, (space)) Selector2
+
+Types:
+1. Descendant Combinator
+eg: Selector1 Selector2 {/* styling properties*/}
+It selects the second element which is the child/grandchild of the first element
+
+2. Child Combinator
+eg: Selector1 > Selector2 {/* styling properties*/}
+It selects the second element which is a direct child of the first element. It is represented by “>”.
+
+3. Adjacent Sibling Combinator
+eg: Selector1 + Selector2 {/* styling properties*/}
+It selects the second element which is adjacent (i.e. right next to)
+ to the first element and both having the same parent. It is represented by “+”.
+
+4. General Sibling Combinator
+eg: Selector1 ~ Selector2 {/* styling properties*/}
+It selects all the elements that match the second selector and are siblings
+ to the first element. It is represented by “~”.
+
+precedence/Priority of selectors:
+id > class > types
+
+Adding Css to html:
+Inline: 
+<!-- <element style="property1:value1;property2:value2">Content</element> -->
+Embedded:
+writing the css in the same file as 
+External :
+<link rel ="stylesheet" href="./link.css">
+Inheritance: eg using the styling inside the body which will apply at page level
+same is for others as well
+Inheritance is a mechanism where the styling properties of
+ the parent will be passed down to the children.
+
+
+Pseudo classes:eg hover, focus....
+usage:
+selector: pseudo-class { 
+    css-property: value; 
+   } 
+eg:  for links: link, visited,hover,active
+pseudo classes  eg: hover,disabled,enabled,focus,required,checked,
+read-only,read-write,default,blank,autofill,fullscreen
+
+: represents  pseudo classes
+:: represents pseudo elements 
+
+pseudo  elements :first-line,first-letter,before,after,selection
+=================================================================
+Stacking :  is a process of  conceptualizing an HTML element as  a 3d structure It gives priority to the HTML elements based on which the element’s appearance changes on loading the HTML document on the view port. The order of rendering the HTML elements will be based on the stacking value.
+done using z-index
+higher the value of z-index more on top it will be  from the other elements;
+always preferred to use a  positive number
+
+Units in CSS:
+Absolute units : cm, in, mm, px
+Relative Units : depends on the viewport size or the properties of the parent element in which the current element is wrapped
+eg: percent, vw,vh, em, rem
+vw/vh: these units provides dimension for elements which are related to width and height of the viewport
+rem: This unit styles the element relative to the font-size of the root element. Except that, it works exactly the way how em units work. 
+
+Css Layouts :
+Css Box model :
+margins :transparent box  outside the borders
+borders :enclose the padding and box
+padding :immediate box enclosing the  content
+content :innermost box in the css box  model represents the contenet
+
+shorthand property: when we set the margin for all sides in the clockwise  direction starting from top,r,b,l.
+eg: margin : 1px 2px 33px 1px
+
+two types of box sizing : 
+content box: dont include borders and padding
+border box:includes border,padding, size of the box
+
+OVERFLOW: this css property controls on what happens if the content is too big to fit into  an area
+overflow values usages:
+hidden, visible, scroll,auto, overflow-x or y scroll
+
+for making box shadow from inside use : box-shadow:inset ....
+
+CSS Positioning: usages: top,right,left,bottom
+Static: By default Position, one by one depending on the previous.
+Absolute: independent of parent element 
+Fixed:
+Relative:
+sticky:   combination of static +fixed;It is a combination of Static as well as Fixed. Initially it will behave as Static but as soon as it reaches the top/bottom of the screen when we scroll then it gets fixed there even if we keep on scrolling. 
+
+FLEXBOX in CSS: for alligning the elements dynamically on the page
+display :flex, inline-flex, block, inline-block
+flex: the container is spread over the whole page, it acts as a  block level element
+inline-flex:the container is spread till the all elements are covered.
+block: element behaves like block level element 
+inline-block: try to fit all elements in the blok
+properties of flexbox:
+display ,  flex-direction,flex-wrap
+direction  to the flex container :
+row, row-reverse, column, column-reverse
+wrapping of the flex elements :
+flex-wrap values :  nowrap, wrap , wrap-reverse
+what flex-wrap does is that it maintains the actual size alloted to the element in the container .  
+also  if we are not using flex  wrap then the size will be maintained according to the doument itlsef
+properties of flex box:
+align-items: align the items  vertically
+justify-content: this property is used to align items at different parts of the container horizontally. 
+
+=================================================================
+Css Grid: way of creating the layouts 
+.container {
+  display : grid;
+}
+.container {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 1fr 2fr;
+}
+each element  in grid has  a specific position hence we have 
+header , sidebar, and the primary content to justify 
+
+.container {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+ grid-template-columns: 1fr 2fr;
+}
+.header {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+}
+.sidebar {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+.primary-content {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+grid-column-template: 1fr 1fr	 :
+This allows to create a template for columns in all rows. This code example 
+would create two columns which occupy one fraction each of the available space
+
+grid-column:  3/5	:
+This allows to span a column across grid lines. This code example would span the 
+column from line 3 to 5
+
+grid-gap:  5px	:
+This allows to apply a gap between all rows and columns. This code example would 
+create a gap of 5px
+
+main layout : 
+‘fr’ is a measurement unit called fraction. 1 fr means occupy one fraction of the available space.
+ if we have a div of 1000px width and we have columns as 1fr 2fr 2fr 1fr 4fr, it will create 5 columns
+  grid-column: 1/5;/* span this column from 1st grid line till 5th grid line*/
+while making the grids : 
+row means the vertical and the column means the horizontal
+practice grids and flex more
+flex is one dimensional however grid  are 2d  struture to manage the design of the html written
+
+advance css concepts : 
+Transformation, transition and animation
+key words like key frames. transform.....
+
+Transformations:  is an effect that lets  an element change its shape size and position.
+Css transformation  functions :
+Translate / Scale/Rotate/ skew/ Matrix /Perspective/ transform
+TRANSLATE : move elements in the horizontal ,vertical, sideways  direction 
+transform : translate(x,y)
+scale : function used to  resize an  element
+transform: scale(x) or  scale(y), or  scale(x,y),  translate(x,y)
+rotate : function  to  rotate the element around a fixed point in the clockwise direction 
+transform : rotateX(2turn or  180 deg) ...rotateY(....)
+
+TRANSITION: changing the properties and all the related transformation in a smooth and timely manner to look attarctive
+To create a transition effect, following must be specified:
+The CSS property to which the effect should be added.
+The duration of the effect.
+properties :
+tansition-property : height/width,background-color,color,
+transition-duration : duration for which the trasition change should take place
+transition-delay : delay between the time  the element is interacted  
+transition-timing-function : 
+transition : somename time eg : slide  3s;
+=================================================================
+
+ANIMATIONS:   
+animations in css is done using keyframes
+@keyframes: 
+eg : 
+@keyframes exampleAnimation {
+    from { background-color: red; }
+    to { background-color: yellow; }
+}
+
+OR 
+
+@keyframes exampleAnimation {
+    0% { background-color: red; }
+    25% { background-color: yellow; }
+    50%  { background-color: blue; }
+    100% { background-color: green; }
+}
+
+div {
+    animation-name: exampleAnimation;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+OR
+Shorthand of the above property is :
+div {
+    animation: exampleAnimation 4s linear 2s infinite alternate;
+}
+
+animation  name: name of the keyframes
+animation duration :set the length of time the animation should take  to complete  one  cycle
+animation delay: delay between the time the element is interacted with and the beginning  of the animation sequence
+animation-timing-function: controls the pace/speed  of the animation possible  values are :
+ease in , ease out , ease,  linear 
+animation-iteration-count : number of times the animation should repeat
+animation : shorthand property to set all the other four properties 
+
+CSS MEDIA QUERIES : 
+RWD :  Response Web Design
+designing  web applications to make them render well on the  devices of the different  sizes
+VIEWPORT: user's visible area of a webpage is called viewport
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+width here in the meta statement can be a specific  value eg : 400px or the device width for some device compatible webview
+not to use view port as it is for only one type of screen
+instead will use the media  queries 
+@media not|only mediatype and (expressions){ 
+        css-code 
+  } 
+media type  values:
+all  : all type of devices
+print : printer friendly  layouts
+Screen :all devices with a display  screens
+speech: screen reader friendly  page 
+expressions : eg:  min-width, max-width , max-resolution
+eg:
+@media (max-width: 768px) {  // for the devices with the max width as such
+  body {
+    font-size: 14px;
+  }
+}
+
+ @media screen and (max-width:1200px){ 
+            .content{ 
+                width:50% 
+            } 
+        } 
+        @media screen and (max-width: 600px) { 
+            .content{ 
+                width: 100%; 
+            }     
+        } 
+  
+  variables  in css; we can declare one variable and use it  across the entire  program
+  Declaring  a variable  :--text-color: brown; 
+using the declared variable :
+:root{ 
+    --text-color : brown;  
+} 
+span{ 
+    color: var(--font-color,red); 
+} 
+p{ 
+    color: var(--text-color); 
+}
+=================================================================
+
+ACCESSIBILITY:
+hiding content : overflow : hidden
+skip links : are  internal pages which helps to  navigate around  the current page  rather than completely new page 
+eg: 
+#skiplink a { 
+   position: absolute; 
+   left: -10000px; 
+   top: auto; 
+   height: 1px; 
+   width: 1px; 
+   overflow: hidden; 
+} 
+#skiplink a: focus { 
+   position: static; 
+   width: auto; 
+   height: auto; 
+} 
+keyboards  accessibility,Hyperlinks, abbrevations eg:
+<p>You can create your webpage using <abbr title = “Hypertext Markup Language”>HTML</p> 
+iamges ,  heading tags , time element 
+<time datetime = “2020-06-21">Summer Solstice</time>
+==============================================================================================================================================================CSS ENDS HERE============CSS ENDS HERE===========CSS ENDS HERE============CSS ENDS HERE============CSS ENDS HERE========CSS ENDS HERE======CSS ENDS HERE========CSS ENDS HERE=========CSS ENDS HERE========CSS ENDS HERE====CSS ENDS HERE=========CSS ENDS HERE====CSS ENDS HERE==========CSS ENDS HERE=====CSS ENDS HERE==========================CSS ENDS HERE===============================================CSS ENDS HERE=========================================================================
+-----------------------------------------------------------------------------------------
+                                                
+                                                
+                                                
+                                                CSS PREPROCESSORS[SASS/STYLUS/LESS/POSTCSS]
+                                                            SASS
+
+
+
+
+CSS PREPROCESSORS:
+We have  several challenges while using css so  preprocessors makes the process  easier
+Css Preprocessors   :LESS ,  SASS , Stylus , PostCSS
+SASS: Systematic Awesome StyleSheet
+Advantages using SASS:
+less css code/additional features compared to basic css/  less time to code in sass/can add variables/fuctions/loops/operators
+less repititive css/cross-browser capabiity
+optional curly brackets, semicolons, variables,mixins,partial imports,interpolation,operators,functions,conditional directives,loops
+Sass style rule written in two ways: SCSS / indented syntax
+-----------------------------------------------------------------------------------------
+
+SCSS: sassy CSS =  basic css + new  features 
+eg: 
+BASIC CSS : 
+.container {
+      background-color: aqua;
+      border:2px solid black;
+      p{
+          color: red;
+      }
+  }
+SCSS:
+.container {
+      background-color: aqua;
+      border:2px solid black;
+      p{
+          color: red;
+      }
+  }
+SASS INDENTED SYNTAX:
+.container
+    background-color: pink
+    border:2px solid black
+    p
+        color: red
+
+sass files uses .scss extension
+Browser cant understand sass  so  sass to css conversion required
+convert sass to css : sass inputFileName.scss outputFileName.css
+update the css file :sass --watch inputFilename.scss:outputFilename.css   
+if multiple  sass are present: sass --watch app/sass:public/stylesheets   
+
+In SCSS we make use of braces  , in sass we dont make use of the brackets 
+
+-----------------------------------------------------------------------------------------
+Rules in SCSS:
+Parent  Selector : represented via &
+1. Used to add pseudo classes/elements to the outer selector for styling.
+eg:
+a{
+    background-color: purple;
+    color:white;
+    &:hover{
+        background-color: pink;
+        color: blue;
+    }
+}
+----------------------------------------------------------
+2. Used to add suffixes to the outer selector 
+eg:
+.demo{
+    background-color: grey;
+    &_heading{
+        color:gold;
+    }
+    &_paragraph{
+        color:blue;
+    }
+}
+---------------------------------------------------
+PLACEHOLDER selector:
+starts  with % , not present in the compiled css file
+in order to use placeholder we will use @extend rule
+Can be used  to  create a  sass library
+use to  predefine the templates and then use them using @extend
+eg : 
+%demo{
+  color:red;
+  background-color:green;
+  font-style : italic;
+}
+now we can use this demo anywhere in our program using the keyword 
+@extend eg:
+h1 {
+  @extend %demo;  
+}
+remember we use paranthesis only in the scss file not in the sass file
+for sass file the above code will be written as follows:
+h1 
+  @extend %demo 
+Nesting  in scss or sass 
+eg:
+div{
+  background-color:white;
+  h1{
+    color:green;
+  }
+  p{
+    font:italic;  
+  }
+}
+
+We can use  combinators also in sass to  perform the nesting of  selectors
+combinators can be added at the end of parent selector or  at the beginning of the child selector or in between parent and child selector
+the way of using the combinators :
+ -------------------------------------------------------------------
+div{
+    >span{ //combinator is at the beginning of the child selector
+        color:darkorange; // selects the direct child 
+    }
+}
+div>{ //combinator is at the end of the parent selector
+    h1{
+        color:blue;
+    }
+}
+div{
+    >{ //combinator is in between parent and child selector
+        p{
+            color:red;
+        } 
+    }
+}
+----------------------------------------------------------------
+
+selectors  list : multiple selectors  separated by  comma
+nesting is also helpful in handling selectors list 
+eg:
+.demo1, .demo2{
+h1, h2{
+    color: red;
+    font-style: italic;
+}
+}
+-----------------------------------------------------------------------------------------
+
+SASS commnets :  are compiled to the css file
+2 types of comments :
+ 1. Silent comment : single line comments , after the compilation  of the sass file  these comments  will not be available   in the css file
+ 2. Loud comment :milti line comments , these will be available in the 
+ css file generated
+-----------------------------------------------------------------------------------------
+
+ silent example :
+ //This is a silent comment which will not be present in compiles CSS file
+p{
+    background-color: aqua;
+    span{
+        color:red;
+    }
+}
+-----------------------------------------------------------------------------------------
+
+loud example :
+/*Loud comment are
+multi line comments
+which will be present in 
+compiled CSS file*/
+p{
+    background-color: aqua;
+    span{
+        color:red;
+    }
+}
+----------------------------------------------------------
+SASS Variables:
+code  repetition is reduced ;
+mathematical  operators can be used 
+Variables are declared in SASS  using  $
+eg:
+$paraSize: 20px;
+$paraColor: red;
+$paraBorder: 1px solid rgba(255,153,153,0.2);
+  
+.demo1{
+    font-size: $paraSize;
+    color: $paraColor;
+    border: $paraBorder;
+}
+$fontColor:black;
+.demo2{
+    font-size: $paraSize;
+    color: $fontColor;
+}
+-----------------------------------------------------------------------------------------
+
+Scope of variables  in SASS :
+Local : restricted to  the block in which they are declared
+eg: 
+//Global Variables can be accessed anywhere throughout the stylesheet
+$globalColor:red;
+$globalBorder: 1px solid rgba(255,153,153,0.2);
+  
+.demo1{
+    //Local variables are accessible within the block in which they are declared
+    $localFontsize:40px;
+    font-size: $localFontsize;
+    color: $globalColor;
+    border: $globalBorder;
+}
+.demo2{
+  //cannot use $localFontsize here as it is having local scope hence it throws compilation error
+  font-size: $localFontsize;
+  color: $globalColor;
+}
+-----------------------------------------------------------------------------------------
+
+Global  : Variables  are declared  at the top of the stylesheet
+eg: 
+//Global Variables can be accessed anywhere throughout the stylesheet
+$globalColor:red;
+$globalBorder: 1px solid rgba(255,153,153,0.2);
+  
+.demo1{
+    color: $globalColor;
+    border: $globalBorder;
+}
+-----------------------------------------------------------------------------------------
+
+DEFAULT: default values are declared by !default
+eg:
+/*here the fontColor will be blue as it already assigned to a value 
+and default value "red"
+is overwritten by "blue" */ 
+$fontColor:blue;
+$fontColor:red !default;
+  
+.demo1{
+    color: $fontColor;
+}
+
+In Sass we can have the same name for both local and global variables
+using shadowing(by  declaring  a local variable under local scope will not change the value of global variable ) in sass  
+
+$fontcolor: blue;
+*container{
+  $fontcolor:red;
+  color:$fontcolor;
+}
+-----------------------------------------------------------------------------------------
+
+we can  also make use of flow control in sass which makes it work like other programming languages 
+eg
+$boolean:true;
+$fontColor:blue;
+$fontSize:50px;
+//this block of code will get executed
+@if $boolean{
+$fontColor:red; 
+$fontSize:80px;
+}
+//color and font-size will be set to red and 80px due to flow control scope
+.demo1{
+    color: $fontColor;  
+    font-size: $fontSize; 
+}
+
+
+Sass also  supports simple scripts  and expressions 
+eg: 
+$size: 25px;
+.basicSize{
+    font-size:$size;
+} 
+#usingExpressions {
+    font-size: $size + 5; //Addition Operator
+}
+-----------------------------------------------------------------------------------------
+
+SASS Interpolation and At-Rules:
+sass inter... means insertion, inserting the sass script expressions into  the sass or css stylesheeet
+used to define a part , property name, selector name, quoted and unquoted strings as variables
+for using sass inter..  we wrap the sass expression inside
+#{}
+eg: 
+@mixin interplotationdemo($modify,$val){
+  background-#{#modify} : #{$val};
+}
+//calling the previously created @mixin
+h1{
+  @include interplotationdemo("color",red);
+}
+//calling the previously  created @mixin
+body{
+  @include interplotation("image",url("someimage.jpg"))
+}
+By using interplotation stylesheet will become more dynamic
+code-reusability
+-----------------------------------------------------------------------------------------
+
+Sass Provides At-Rules or @rules ,eg:defining function, working with loops , conditional statements .
+all the At-Rules available in sass are prefixed with  "@" keyword, all have  a unique  purpose
+1. @mixins and @inclide
+2. @use
+3. @forward
+4. @function 
+5. @extend
+other rules : @if, @else, @for, @while, @error, @warn, @debug, @at-root, @each
+
+Mixins : is similiar to the functions in other programming languages.
+created using @mixin  ,
+and @include tool is used to utilize the  mixin created using mixin
+there are 2  ways to create  mixin:
+@mixin without argument
+@mixin with argument
+-----------------------------------------------------------------------------------------
+
+1. mixin without argument :
+used whenever we want to group few style rules and reuse the same properties again
+@mixin mixinName{
+  propertyOne: value;
+  propertyTwo: value;
+      ...
+  property-N: value;
+}
+selector{
+  @include mixinName;
+}
+-----------------------------------------------------------------------------------------
+
+2. mixin with argument :
+used when we want to style rules and reuse the same properties again with some different values
+//defining a mixin with arguments
+@mixin mixinName($argument1, $argument2) {    
+  property1: $argument1;
+  property2: $argument2;
+}
+selector{
+  @include mixinName($value1, $value2);
+}
+eg:
+@mixin mixinDemo($val1, $val2){
+  background-color: $val1;
+  color:$val2;
+}
+h1{
+  @include mixinDemo(peachpuff,purple )
+}
+h2{
+  @include mixinDemo(black,white )
+}
+-----------------------------------------------------------------------------------------
+
+Default /Optional  arguments : 
+we can also pass the default value to an argument  during mixin declaration .
+in case we dont provide the value to the argument  then the default value will be passed
+
+@mixin  mixindemo($val1, $val2:green){
+  background-color:blue;
+  color:$val2;
+}
+h1{
+  @include mixindemo(cream);
+}
+-----------------------------------------------------------------------------------------
+
+Keyword Argument :
+the value while creating mixin  of the argument can also be passed using argument name
+
+In order to use the variable , functions  and mixins defined in another stylesheet  @use is used
+Before  introduction of @use  ,  @import  was used.
+while using @use the stylesheets will be simpler and therefore easy to style ,these are called as modules
+eg:
+@use '<URL of another stylesheet>'
+@use 'stylesheet.scss';
+@use should be the first statement in  the style sheet 
+@forward  can be added before that
+-----------------------------------------------------------------------------------------
+
+The name of the stylesheet without extension  which  is included using @use  rule is called as namespace
+so to use all var, fun, mxini... from namespace we do following:
+<namespace/filename>.<variableName> //access variables
+/* OR */
+<namespace/filename>.<functionName>() //access functions
+/* OR  */
+@include <namespace/filename>.<mixinName>() //access mixins
+eg: 
+-----------------------------------------------------------------------------------------
+
+//namespace.scss
+$color:blue;
+$fontStyle:italic;
+@mixin borderDemo($borderWidth, $borderStyle, $borderColor){
+    border-width: $borderWidth;
+    border-style: $borderStyle;
+    border-color: $borderColor;
+}
+
+//main.scss
+@use 'namespace.scss';
+h1{
+  color:namespace.$color;
+ @include namespace.borderDemo(4px, dotted,red)
+}
+-----------------------------------------------------------------------------------------
+
+Custom  Namespace:
+custom namespace can also be given to the external stylesheet custom namespace are  given "as"
+eg:
+@use "<url>" as <custom-namespace>
+eg:
+@use 'namespace.scss' as n;
+h1{
+  color:n.$color;
+  @include n.borderDemo(4px, dotted,red)
+}
+-----------------------------------------------------------------------------------------
+Private Members :
+defined using  - or _
+whenver we dont want  some members of the stylesheet to be visible outside the stylesheet then we can make use of  private members 
+will get a compilation error if try to access the private members outside the sheet
+
+Partials: sass files which should be loaded just  as  modules and not get compiled on their ouwn  are called as partials.
+created with (_) precedding the file name
+eg: _second.scss
+-----------------------------------------------------------------------------------------
+
+Sass Forward At rule :
+incorporate members of one styleshet to another stylesheet, works same as @use
+only diff is that :  in @use  we wont be able to access the members  of the included sheet in further imports,  @forward does that and maintain  the heirarchy of the stylsheet
+eg:
+@forward 'STYLESHEET URL'
+
+@forward :namespace:
+namespace in forward works  same as  namespace in use.
+in addition to that prefix can be added to   the member nams of the module which are getting imported using forward
+eg:
+@forward "<url>" as <prefix>-*
+eg: 
+//sheet1.scss file which contains mixin
+@mixin mixinDemo{
+    background-color: peachpuff;
+    color:purple;
+}
+//sheet2.scss with prefix
+@forward 'sheet1' as list-*;
+p{
+    font-style: italic;
+}
+//sheet3.scss
+@use 'sheet2';
+h1{
+    @include sheet2.list-mixinDemo; //accessing mixin from sheet1.scss using prefix
+}
+--------------------------------------------------------------
+@function :
+can be used to define a  function  with complex operations works same like functions in other programming languages
+must have  a return statement
+unlike mixins , functions  must have  a return type
+return statement is defined using @return 
+eg:
+@function <function-name>(<function-arguments...>) {
+    // function-definition
+    @return <value>
+}
+eg:
+@function multiply($num1, $num2) {
+    $result : $num1 * $num2;
+    @return $result;
+}
+h1{
+    font-size: multiply(20,6)*1px;
+    color:red;
+}
+--------------------------------------------------------------
+@extend rule :
+perform inheritance of the style rule
+if we want to  add the style rule of one selector to another selector along with its specific rules we can use extend rule  
+@extend <selector>
+
+.border{
+    border:2px solid blue;
+}
+.safe{
+    color:green;
+    @extend .border;
+    border-color: green;
+}
+.danger{
+    color:red;
+    @extend .border;
+    border-color:red;
+}
+whenever we want to  add style  rules  with the arguments we  use @mixin
+if we want to reuse the static style rule then we use  @extends
+-------------------------------------------------------------
+SASS built in modules:
+Built in modules can  be imported in user defined stylesheet using @use , starts with  sass eg:  sass:math
+math, string , color, list, map
+sass :  selectors and sass :meta
+sass:  math : 
+
+math : ceil,clamp,floor, max, min,div
+eg: 
+@use "sass:math";
+@debug math.ceil(20.5);   
+@debug math.floor(20.5);  
+@debug math.clamp(1,3,6); 
+@debug math.clamp(1,0,6); 
+@debug math.clamp(1,8,6); 
+@debug math.max(10,20,30);
+@debug math.min(10,20,30);
+@debug math.div(25,5); 
+math.clamp($min, $number, $max), $number is restricted to the values between $min and $max. if $number is less than $min return $min and if $number is greater than $max returns $max.  
+-------------------------------------------------------------
+
+sass: String :
+quote, unquote,index,insert,length, slice,to-upper-case,lower...
+eg:
+@use "sass:string";
+@debug string.quote(welcome); //"welcome"
+@debug string.unquote("welcome"); //welcome
+@debug string.index("sass built-in modules", "built"); //6
+@debug string.insert("welcome", "world", 7); // welcomworlde
+@debug string.insert("world", "welcome", -6); // welcomeworld
+@debug string.length("welcome"); //7
+@debug string.slice("welcome",2,5); //elco
+@debug string.to-upper-case("welcome"); //WELCOME
+@debug string.to-lower-case("WELCOME"); //welcome
+-------------------------------------------------------------
+sass: color:
+1. color:adjust() - in order to increase or decrease the properties of  color by some  fixed  amount color.adjust() function is used 
+eg:
+color.adjust($color,
+$red: null, $green: null, $blue: null,
+$hue: null, $saturation: null, $lightness: null,
+$alpha: null)
+
+adjust-hue() = in order to increaese or decrease the value of hue , eg: 
+@use "sass:color";
+@debug adjust-hue(#0b3c2c, -70deg); //#233c0b
+
+color:alpha9(): 
+in order to  return alpha channel of a color which  ranges between 0 and 1  eg:
+@use "sass:color";
+@debug color.alpha(#aabbcc); //1
+@debug color.opacity(rgb(234, 135, 211, 0.8)); //0.8
+@debug alpha(opacity=9); //alpha(opacity=9)
+
+color:change():In-order to set properties of a color to new color values color:change() function is used
+
+color.change($color,
+$red: null, $green: null, $blue: null,
+$hue: null, $saturation: null, $lightness: null,
+$alpha: null)
+eg: 
+@use "sass:color";
+@debug color.change(#6c313f, $green: 100); //#6c643f
+@debug color.change(#c2efff, $red: 90, $green: 50); // #5a32ff
+@debug color.change(#999999, $lightness: 50%, $alpha: 0.9); //rgba(128, 128, 128, 0.9)
+
+
+color:complement():In-order to return the RGB complement of a color color:complement() function can be used.
+color.complement($color)
+eg: 
+@use "sass:color";
+@debug color.complement(red);  //aqua
+@debug color.complement(#c3e1ff);// #ffe1c3
+@debug color.complement(green); //purple
+
+
+
+color:saturation():color:saturation() function is used to increase saturation by the given amount.
+color.saturate($color, $amount);
+eg:
+@use "sass:color";
+@debug saturate(#0e4783,60%);
+
+-------------------------------------------------------------
+sass:list
+
+To perform various operations on list  value type   sass:list in module  is used:
+append, index, join, length, nth, slash , separator
+eg :
+@use "sass:list";
+//APPEND FUNCTION
+@debug list.append(60px 20px, 40px); // 60px 20px 40px
+@debug list.append((purple, gold), blue); // purple, gold, blue
+@debug list.append(60px 20px, 40px 40px); // 60px 20px (40px 40px)
+@debug list.append(60px,20px, $separator: slash); // 60px / 20px
+@debug list.append((purple, gold), blue,  $separator: space); // blue red green
+//INDEX FUNCTION
+@debug list.index(2px solid purple, 2px); // 1
+@debug list.index(2px solid purple, solid); // 2
+@debug list.index(1px solid purple, dotted); // null
+//JOIN FUNCTION
+$list1:(a,b);
+$list2:(c,d);
+@debug list.join($list1, $list2); // a, b, c, d
+@debug list.join($list1, $list2, $separator: slash); //  a / b / c / d
+@debug list.join(($list1), ($list2), $separator: space); //  a b c d
+@debug list.join($list1, $list2, $bracketed: true); // [a, b, c, d]
+//LENGTH FUNCTION
+@debug list.length($list1); //2
+//nth FUNCTION
+@debug list.nth($list2,2);  //d
+//SLASH FUNCTION
+@debug list.slash(10px, 50px, 30px); //10px / 50px /30px;
+//SEPARATOR FUNCTION
+@debug list.separator($list1); //comma
+
+-------------------------------------------------------------
+sass:map:
+To perform various operations on map value type sass:map built-in module is used.
+map.get(),map.has-key(), map.keys(), map.merge(), map.remove(), map.values();
+@use "sass:map";
+$demo: ("red": 1, "blue": 2, "green": 3, "yellow":4);
+$demo1:("purple":5, "gold":6);
+//GET FUNCTION
+@debug map.get($demo, "blue"); //2
+@debug map.get($demo, "purple"); //null
+//HAS-KEY FUNCTION
+@debug map.has-key($demo, "red"); //true
+@debug map.has-key($demo, "purple"); //false
+//KEYS FUNCTION
+@debug map.keys($demo); // "red", "blue", "green", "yellow"
+//MERGE FUNCTION
+@debug map.merge($demo, $demo1); //("red": 1, "blue": 2, "green": 3, "yellow": 4, "purple": 5, "gold": 6)
+@debug map.merge($demo1, ("gold": 20)); //("purple": 5, "gold": 20)
+@debug map.merge($demo, ("blue": 10)); //("red": 1, "blue": 10, "green": 3, "yellow": 4)
+//REMOVE FUNCTION
+@debug map.remove($demo1, "purple"); //("gold": 6)
+@debug map.remove($demo, "red", "green"); //("blue": 2, "yellow": 4)
+@debug map.remove($demo, "peach"); // ("red": 1, "blue": 2, "green": 3, "yellow": 4)
+
+-------------------------------------------------------------
+value types in sass: 
+values types supported in sass:
+
+Numbers
+Strings
+Colors
+Boolean values
+Null values
+List of values
+Maps
+
+
+numbers : units
+@debug 8px * 2px; // 16px*px (read as "square pixels") 
+@debug 1in + 4px; // 1 inch=96px, so output is 98px or 1.0416in
+@debug 1in + 1s;  // incompatible units
+------------------------------------------------------------
+strings : quoted and unquoted:
+@debug "Times New Roman"; //Times New Roman
+@debug bolder;            // bolder
+string:indexes : 
+@use "sass:string";
+@debug string.index("SASS Course", "Course"); // 6
+@debug string.index("SASS Course", "SASS");  // 1
+@debug string.slice("SASS Course", -4);     // "urse"
+
+------------------------------------------------------------
+color:
+Using hexadecimal values like #f3cae2, #e365fd
+Using color names like blue, pink
+Using functions like rgb(), rgba(), hsl(), hsla() 
+ 
+
+
+@debug #f2bad9;   // #f2bad9
+@debug #c46279cc; //rgba(196, 98, 121, 0.8)
+@debug red; //red
+@debug rgb(218, 112, 129); //rgb(218, 112, 129)
+@debug rgba(150, 153, 157, 0.8); // rgba(150, 153, 157, 0.8)
+@debug hsl(20, 10%, 90%); //hsl(20, 10%, 90%)
+@debug hsla(20, 40%, 25%, 0.9); //hsla(20, 40%, 25%, 0.9)
+
+
+------------------------------------------------------------
+boolean:
+
+@debug 20px == 2px;       //false
+@debug 10px == 10px;      //true 
+@debug 14px < 2px;        //false 
+@debug white =="white"; //false
+
+------------------------------------------------------------
+null : 
+
+The SASS null values indicates the absence of a value. Null value is mostly returned by functions which shows the lack of result.
+@use "sass:string";
+@debug &;  //null
+@debug string.index("course", hi); //null
+------------------------------------------------------------
+
+list of values : 
+
+$list: 1, 2, 3;    // without square brackets
+$list1: [1,2,3,4]; //using square brackets
+using list : 
+@use "sass:list";
+@debug list.nth(20px 22px 6px, 2); // 22px
+@debug list.nth([red, blue, green], -1); // green
+
+adding elements to list :
+@debug append(12px 23px 6px, 25px); // 12px 23px 6px 25px
+@debug append([red, blue], yellow); // [red, blue, yellow]
+
+
+
+finding element in a list : 
+@use "sass:list";
+@debug list.index(8px solid green, 8px); // 1
+@debug list.index(1px 5px red, red); // 3
+@debug list.index([red, blue, green], pink); // null
+
+do  something to every element :
+$size: 10px, 20px, 30px;
+@each $s in $size {
+  h1-#{$s} {
+    font-size: $s;
+    width: $s;
+  }
+}
+------------------------------------------------------------
+
+
+
+sass :  maps : 
+SASS maps are the key and value pairs. Keys are used in-order to access the values
+eg: 
+(<expression>: <expression>, <expression>: <expression>)
+$font-sizes: ("small": 100, "medium": 300, "large": 500);
+
+using maps :
+
+@use "sass:map";
+$font-sizes: ("small": 100, "medium": 300, "large": 500);
+@debug "the font-size value is:" map.get($font-sizes,large); //500
+@debug "the font-size value is:" map.get($font-sizes,larger);//null
+
+add to  a map:
+
+@use "sass:map";
+$font-sizes: ("small": 100, "medium": 300, "large": 700);
+@debug  map.set($font-sizes,"larger", 900); //("small": 100, "medium": 300, "large": 700, "larger": 900)
+@debug  map.set($font-sizes, "medium", 500);//("small": 100, "medium": 500, "large": 500)
+
+merge maps : 
+@use "sass:map";
+$font-sizes: ("small": 100, "medium": 300, "large": 700);
+@debug  map.set($font-sizes,"larger", 900); //("small": 100, "medium": 300, "large": 700, "larger": 900)
+@debug  map.set($font-sizes, "medium", 500);//("small": 100, "medium": 500, "large": 500)
+
+The map.set() and map.merge() does not change the original map instead they return the copy of the updated map.
+
+ 
+do something to each key value pair in map
+
+$sizes: ("small": 10px, "medium": 20px, "large": 50px);
+@each $key, $value in $sizes {
+  p-#{$key}{
+    font-size: $value;
+  }
+}
+------------------------------------------------------------
+
+Sass Operators :
+Unary operators: NOT, +, – and /.
+ /, * and % operators.
++ and – operators.
+<, <=, > and >= operators.
+== and != operators.
+AND operator.
+OR operator.
+= operator whenever available.
+ 
+
+Numeric Operators
+Equality Operators
+Relational Operators
+String Operators
+Boolean Operators
+
+eg :
+
+@debug 1s + 15s;  // 16s
+@debug 1in - 6px;  //  0.9375in
+@debug -2px * 3px; // -6px*px
+@debug 25px / 5;  // 5px
+@debug 2in % 5px; // 0.0208in
+
+Equality operators are used to check equality. They consists of two operators, namely equal to and not equal to.
+
+The equality operators behave differently for different value types
+
+Two numbers are said to be qual if they have same number and same unit.
+Colors are equal if red, green, blue and alpha values are same.
+True, false, null are equal to themselves.
+
+@debug true and true; // true
+@debug true and false; // false
+@debug true or false; // true
+@debug false or false; // false
+@debug not true; // false
+@debug not false; // true
+@debug (1px==1px) and (1px==1);//false
+@debug (1px==1px) or (1px==1); //true
+-----------------------SASS ENDS HERES----------SASS ENDS HERES-----------SASS ENDS HERES----------------SASS ENDS HERES--------------SASS ENDS HERES------------SASS ENDS HERES-----------------SASS ENDS HERES-----------------------------SASS ENDS HERES------------------SASS ENDS HERES--------------------------------SASS ENDS HERES                          ------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------
+STYLUS STARTS------------STYLUS STARTS --------------STYLUS STARTS -----------STYLUS STARTS ----------STYLUS STARTS-------------STYLUS STARTS --------STYLUS STARTS ------STYLUS STARTS ---------STYLUS STARTS -------STYLUS STARTS -STYLUS STARTS ----------STYLUS STARTS --------------STYLUS STARTS --STYLUS STARTS --------------STYLUS STARTS -------------STYLUS STARTS  
+
+                                                  
+
+                                                  STYLUS
+
+
+                                                  
+
+Stylus :
+stylus is a scripting language  which  is node based css preprocessor which  dynamically compiles into css
+inspired by saas, Built in node
+reusability of code supported , 
+Backword compatibility is ensured
+automations can be done
+extension : .styl
+compiles to css just like .scss
+node:  open source javascript  run time  enviorment
+stylus is an : npm package
+installed using npm cli tool
+
+Features :
+Optional curly braces, colons and semicolons
+Mixins
+Variables
+Interpolation
+Programming Language features like operators, loops, functions, conditionals etc.
+node -v 
+npm install stylus -g
+------------------------------------------------------------
+while writing code: 
+semi colon curly braces  can  be   avoided
+eg: 
+body
+  background-color grey
+  color red
+
+coversion of the stylus to  the .css file :
+stylus -w mystyle.styl -o mystyle.css
+
+Stylus is indentation  based  which  means we can replace  curly braces  with indent(means using spacing in the lines and the block of code)
+can also  replace a colon with an indent
+define several  properties using a comma
+eg:
+p,span
+  color red
+or  from new line you  can start 
+p
+  span
+      background  green
+
+&  character references the Parent Charactoer 
+eg:
+p
+span
+    color red
+    &:hover
+      font-size 50px
+
+single line comment : //
+multi line comment : /* */
+
+for commpressing the file we will use following line :
+ stylus -c -w mycomment.styl -o mycomment.css
+------------------------------------------------------------
+
+VARIABLES :
+can also define  variables in stylus 
+eg:
+bcolor = hotpink
+$mycolor = red
+myfont = 'Courier New', Courier, monospace
+mynum = 10px 20px 30px
+p
+    background-color bcolor
+    color $mycolor
+    font mynum[1] myfont
+
+for creating  null variables we have to use : 
+x = ()
+span  
+    font x 'Courier New', Courier, monospace
+    border x solid x
+
+------------------------------------------------------------
+PROPERTY LOOKUP in STYLUS : provide values to any property while referring another property
+eg :
+p
+    border 5px solid blue
+    width 300px
+    height (@width/2)
+
+for appending the value we use @
+------------------------------------------------------------
+INTERPLOTATION in Stylus is achieved using  {}
+myselector = "div>p"
+{myselector}
+  color:blue;
+  
+{myselector}>span
+  background-color:lightblue;
+mygroup = "input,textarea"
+{mygroup} 
+  border 2px solid blue
+
+MIXINS :group of code contained in  a statement
+eg: 
+“padding” mixin is created and then have been used to style h1 element.
+padding()
+    -webkit-padding 20px
+    -moz-padding 20px
+    padding 20px
+h1
+    width 200px
+    height auto
+    border 2px solid blue
+    text-align center
+    padding()
+
+arguments can be  passed in mixins as below :
+padding(n)
+  -webkit-padding n
+  -moz-padding n
+  padding n
+h1
+    width 200px
+    height:auto
+    border: 2px solid blue
+    text-align center
+    padding(20px)
+------------------------------------------------------------
+Operators  in Stylus :
+Unary Operator : !,not ,- , + , and ,~
+Arithmetic operators : used for all arithmetic  operations eg: addition, multiplication, addition, subtraction,division,modulo and exponential
+** : is exponential
+eg  : 3**4 = 81
+Assignment Operators : = , +=, -=, *=,/=,%=, =
+Relational Operators : ==,<=,>=,,!=,>,<
+Ternary Operators : conditional ? first : second
+existence operator : in  :  it checks for  left hand operand in right hand
+Instance check (is a) : used for type  checking eg: #00f is a "rgba"
+variable defined: (is defined): used to  check if the variable  is defined or not
+Casting: helps in casting or suffixing  a unit to any variable 
+subscript: [] : [] operator is used to access a value inside an expression or list by index
+Range Operators: used for  providing range :two  types of range operators :
+inclusive (..)
+Exclusive(...)
+
+------------------------------------------------------------
+
+FUNCTIONS :
+supports  powerful  language  features functions . functions look like a mixin  but they can  return a value
+creation of function in Stylus :
+multiply(a,b)
+    a*b
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding multiply(10px,3)
+
+functions can take a default  value :
+multiply(a,b=3)
+    a*b
+
+functions can take named parameterS: 
+multiply(a,b)
+    a*b
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding multiply(b:3, a:10px)
+
+mutiple values return  : using return statement , or using rest  params :
+1. using return  params : 
+radius(a,b,c,d)
+    return a b c d
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding 30px
+    border-radius radius(50px,100px,150px,200px)
+
+2. using rest params : 
+myval(num...)
+    num
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding myval(15px,25px,35px)
+
+In stylus  annonymous functions  can be written using syntax @(){}
+radius=@(a,b,c,d){
+    return a b c d
+}
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding 30px
+    border-radius radius(50px,100px,150px,200px)
+
+In stylus  arguments can be accessed  using keyword  arguments  , all the parameters are given  as an array.
+eg: 
+multiply(a,b=2)
+    arguments[0]*arguments[1]
+h1
+  border 2px solid red
+  width 400px
+  text-align center
+  padding multiply(10px)
+
+In Stylus function can be assigned to another variable and that new variable can be used as an alias function for the original function.
+eg:
+myval(num...)
+    num
+mynewval = myval
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding mynewval(15px,25px,35px)
+
+Built in functions in  the Stylus :
+​​​​​​​Color Functions
+Path Functions
+List / Hash Functions
+Unit Functions
+Math Functions
+String Functions
+Utility Functions
+Console Functions
+External File Functions
+
+eg:
+mycolor = hsl(250,100%,50%)
+mybcolor = hsl(150,100%,50%)
+myhuecolor = hue(mycolor)
+myhuebcolor = hue(mybcolor)
+#div1
+    color mycolor
+    background mybcolor
+#div2
+    color hsl(myhuecolor,100%,50%)
+    background hsl(myhuebcolor,100%,50%)
+------------------------------------------------------------
+conditions and iterations :
+if/else /else if
+
+eg:
+border-radius(rad,corner)
+    if corner
+        border-radius rad
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding 30px
+    border-radius(50px,true)    
+
+        or
+
+mycolor(padding)
+    if padding>50px
+        background green
+    else if padding<20px
+        background blue
+    else
+        background grey
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    mycolor(30px)
+
+conditional unless  is opposite of  if like if(!(exp))
+border-radius(rad,corner)
+    unless corner
+        border-radius rad  
+h1
+    border 2px solid red
+    width 400px
+    text-align center
+    padding 30px
+    border-radius(50px,false)
+
+for-in loop:
+#empdetails
+    for i in 1 2 3 4 5
+        tr:nth-child({i})
+            background-color hsl(i*20,100%,50%)
+
+
+------------------------------------------------------------
+
+
+HASHES  are  introduced as data type
+Hashes are objects – collection of key-value pairs separated by comma, enclosed in curly braces. The syntax is same as for objects in JavaScript.
+eg:
+mystyle1 = {
+  myheight: 50px,
+  mywidth: 400px,
+  mycol: yellow
+}
+mystyle1.mycol = green
+mystyle1['myborder'] = 5px solid grey
+
+values from  hashes can be  retrieved in two ways :
+using dots for   indents 
+or 
+square brackets  for strings  or indent  both
+eg:
+
+mystyle1 = {
+  myheight: 50px,
+  mywidth: 400px,
+  mycol: yellow    
+}
+mystyle1.mycol = green
+mystyle1['myborder'] = 5px solid grey
+h1
+  text-align center
+  height mystyle1.myheight
+  width mystyle1.mywidth
+  color mystyle1.mycol
+  border mystyle1['myborder']
+
+or 
+
+mycolorset = {
+  "1": red,
+  "2": green
+}
+trafficlight = false
+if trafficlight
+  col="2"
+else
+  col="1"
+p
+  width 100px
+  background mycolorset[col]
+
+
+​​​​​​​Hashes can also be used inside an interpolation as in below example
+mystyle2 = {
+  height: 50px,
+  width: 200px,
+  color: green,
+  border: 5px solid grey
+}
+h2
+  {mystyle2}
+  text-align center
+
+​​​​​​​One can iterate though hashes using key and value properties of hashes as in below example :
+mycolors = {
+  "1": red
+  "2": blue
+  "3": green
+  "4": grey
+  "5": yellow
+}
+table
+  for key, value in mycolors
+      tr:nth-child({key})
+          background-color value
+
+Anonymous hash objects (hash object without name) can be created for list as in below example : 
+
+mystyle = red {height:50px, width:500px} {padding:10px, border:2px solid green};
+mystyle1 = mystyle[1]
+mystyle2 = mystyle[2]
+h1
+    color mystyle[0]
+    {mystyle1}
+    {mystyle2}
+
+
+
+@import :
+It is used to import a css or stylus file within another file. If extension is not given then by default it will take extension as .styl
+eg: 
+@import “mystylus/myvar”
+@import “mystylus/index.css”
+
+@require :
+It works almost in the same way except it is used to import any given file only once.
+
+@media:
+@media screen and (min-width: 1200px)
+    background-color pink
+  
+@font-face
+@font-face
+   font-family myfont
+   src url(path)
+
+
+@keyframes
+@keyframes myframe
+    for i in 1..5
+        {20% * i}
+            margin-left (i*100px)
+eg:
+@keyframes myframe {
+  20% {
+    margin-left: 100px;
+  }
+  40% {
+    margin-left: 200px;
+  }
+  60% {
+    margin-left: 300px;
+  }
+  80% {
+    margin-left: 400px;
+  }
+  100% {
+    margin-left: 500px;
+  }
+}
+
+------------------------------------------------------------
+------------------STYLUS ENDS HERE --------------------STYLUS ENDS HERE -----------------------STYLUS ENDS HERE ----------STYLUS ENDS HERE --------------STYLUS ENDS HERE ---STYLUS ENDS HERE -STYLUS ENDS HERE STYLUS ENDS HERE------------------STYLUS ENDS HERE --------------------STYLUS ENDS HERE -----------------------STYLUS ENDS HERE ----------STYLUS ENDS HERE --------------STYLUS ENDS HERE ---STYLUS ENDS HERE -------------
+------------------------------------------------------------
+
+
+
+
+
+
+------------------------------------------------------------
+TOPICS LEFT ARE: LESS , POSTCSS
+------------------------------------------------------------
+------------------------------------------------------------
